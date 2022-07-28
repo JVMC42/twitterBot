@@ -5,10 +5,10 @@ const { log } = require('console');
 require('dotenv').config()
 
 const T = new twit({
-    consumer_key: process.env.TAPI_KEY,
-    consumer_secret: process.env.TAPI_SECRET_KEY,
-    access_token: process.env.TACCESS_TOKEN,
-    access_token_secret: process.env.TACCESS_TOKEN_SECRET,
+    consumer_key: process.env.API_KEY,
+    consumer_secret: process.env.API_SECRET_KEY,
+    access_token: process.env.ACCESS_TOKEN,
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET,
     timeout_ms: 60 * 1000,
     
 })
@@ -26,7 +26,8 @@ async function postar(){
       })
 }
 
-setInterval(postar,10*1000);
+setInterval(postar,60*60*1000);
+
 
 
 
