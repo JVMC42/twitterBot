@@ -1,7 +1,9 @@
 var twit = require('twit');
 const fs = require('fs')
+const express = require('express');
 const fetch = require('node-fetch');
 const { log } = require('console');
+const app = express();
 require('dotenv').config()
 
 const T = new twit({
@@ -27,6 +29,8 @@ async function postar(){
 }
 
 setInterval(postar,60*60*1000);
+
+app.listen(process.env.PORT || 3000)
 
 
 
